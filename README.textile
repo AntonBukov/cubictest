@@ -1,3 +1,7 @@
-h1. Welcome to Lenny system
+h1. Welcome to Lenny
 
-See "www.lenny.apelsin.by":http://lenny.apelsin.by for more information.
+Lenny is a visual tool for writing Selenium tests. It makes tests faster and easier to write, and provides abstractions to make tests more robust and reusable. Go to www.lenny.apelsin.by for more information.
+
+Latest version: http://lenny.apelsin.by/en/download.html
+
+
