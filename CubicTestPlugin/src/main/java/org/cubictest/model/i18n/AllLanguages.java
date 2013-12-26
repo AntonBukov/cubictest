@@ -22,7 +22,11 @@ import org.cubictest.model.SationObserver;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
 
-
+/**
+ * i18n
+ * @author Stein K. Skytteren and Christian Schwarz
+ *
+ */
 public class AllLanguages extends PropertyAwareObject{
 	private List<Language> languages;
 	private List<SationObserver> observers;
@@ -114,7 +118,7 @@ public class AllLanguages extends PropertyAwareObject{
 			try {
 				if (language.updateLanguage() == false) {
 					if (MessageDialog.openConfirm(new Shell(), 
-							"CubicTest", "Load of language file " + language.getFileName() + " failed.\n\n" +
+							"Lenny", "Load of language file " + language.getFileName() + " failed.\n\n" +
 					"Do you want to remove the language from the test?")) {
 						toRemove.add(language);
 					}

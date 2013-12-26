@@ -15,6 +15,7 @@ import org.cubictest.model.AbstractPage;
 import org.cubictest.model.PageElement;
 import org.cubictest.model.Transition;
 import org.cubictest.model.UserInteraction;
+import org.eclipse.core.resources.IProject;
 
 public interface IRecorder {
 
@@ -52,4 +53,8 @@ public interface IRecorder {
 	
 	public void addToTest(Transition transition, AbstractPage endPage);
 
+	/**
+	 * This method needs for interaction with project
+	 */
+	public IProject getCurrentProject();
 }

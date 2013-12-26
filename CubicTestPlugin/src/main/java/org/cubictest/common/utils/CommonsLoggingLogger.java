@@ -7,7 +7,6 @@
  * 
  * Contributors:
  *    Stein K. Skytteren and Christian Schwarz - initial API and implementation
- *    Mao YE - version up, new feature extended
  *******************************************************************************/
 package org.cubictest.common.utils;
 
@@ -22,7 +21,7 @@ import org.apache.commons.logging.LogFactory;
  */
 public class CommonsLoggingLogger {
 
-	private static Log log = LogFactory.getLog("CubicTest");
+	private static Log log = LogFactory.getLog("Lenny");
 	
 	public static void error(String message) {
 		String newMessage = StringUtils.isBlank(message) ? "An error has occurred" : message;

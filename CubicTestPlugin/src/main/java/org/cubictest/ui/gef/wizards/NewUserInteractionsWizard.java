@@ -35,7 +35,7 @@ public class NewUserInteractionsWizard extends Wizard {
 	 */
 	public NewUserInteractionsWizard(UserInteractionsTransition transition, Test test, PageElement selectedPageElement) {
 		this.selectedPageElement = selectedPageElement;
-		setWindowTitle("CubicTest");
+		setWindowTitle("Lenny");
 		this.transition = transition;
 		this.test = test;
 		setNeedsProgressMonitor(true);

@@ -96,7 +96,7 @@ public class NewSubTestWizard extends AbstractNewSimpleStartPointTestWizard impl
 	}
 
 	protected void getWizardTitle() {
-		setWindowTitle("New CubicTest sub test");
+		setWindowTitle("New Lenny sub test");
 	}
 
 	public void setRefactorInitOriginalNodes(

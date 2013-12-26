@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.cubictest"
-      label="CubicTest"
-      version="2.0.6"
+      label="Lenny"
+      version="0.1.3"
       provider-name="cubictest.org"
       plugin="org.cubictest">
 
-   <license url="http://www.eclipse.org/legal/epl-v10.html">
-      Eclipse Public License - v 1.0 
+   <license url="http://www.lenny.apelsin.by/legal/license.html">
+      License - v 1.0 
 
 THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE (&quot;AGREEMENT&quot;). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT&apos;S ACCEPTANCE OF THIS AGREEMENT. 
 
@@ -96,7 +96,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </license>
 
    <url>
-      <update label="CubicTest" url="http://www.cubictest.org/update"/>
+      <update label="Lenny" url="http://www.lenny.apelsin.by/update"/>
    </url>
 
    <requires>
@@ -123,28 +123,28 @@ This Agreement is governed by the laws of the State of New York and the intellec
          id="org.cubictest"
          download-size="0"
          install-size="0"
-         version="2.0.6"
+         version="2.0.3"
          unpack="false"/>
 
    <plugin
          id="org.cubictest.recorder.cubicrecorder"
          download-size="0"
          install-size="0"
-         version="2.0.6"
+         version="2.0.3"
          unpack="false"/>
 
    <plugin
          id="org.cubictest.exporters.selenium"
          download-size="0"
          install-size="0"
-         version="2.0.6"
+         version="2.0.3"
          unpack="false"/>
 
    <plugin
          id="org.cubictest.exporters.watir"
          download-size="0"
          install-size="0"
-         version="2.0.6"
+         version="2.0.3"
          unpack="false"/>
 
 </feature>

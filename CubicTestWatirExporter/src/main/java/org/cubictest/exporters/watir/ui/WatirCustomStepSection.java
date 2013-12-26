@@ -58,7 +58,7 @@ public class WatirCustomStepSection extends CustomStepSection implements ICustom
 		composite.setLayout(formLayout);
 		
 		newRbFileLink = new Link(composite, SWT.PUSH);
-		newRbFileLink.setText("<A>CubicTest Watir extension*: </A>");
+		newRbFileLink.setText("<A>Lenny Watir extension*: </A>");
 		newRbFileLink.setBackground(ColorConstants.white);
 		newRbFileLink.addSelectionListener(new SelectionListener(){
 			public void widgetDefaultSelected(SelectionEvent e) {}

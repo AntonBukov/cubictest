@@ -1,7 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?><project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.cubictest</groupId>
-  <artifactId>CubicTestPlugin</artifactId>
-  <version>2.0.6</version>
-  <description>CubicTest Eclipse Plugin</description>
+  <artifactId>Lenny</artifactId>
+  <version>2.0.3</version>
+  <description>Lenny Eclipse Plugin</description>
+  
+  <repositories>
+  	<repository>
+	  <id>Lenny</id>
+	  <url>http://lenny.apelsin.by/</url>
+    </repository>
+  </repositories>
+  
+  <build>
+  	<plugins>
+        <plugin>
+      	<groupId>org.apache.maven.plugins</groupId>
+      	<artifactId>maven-compiler-plugin</artifactId>
+      	<configuration>
+      		<source>1.5</source>
+      		<target>1.5</target>
+      	</configuration>
+      </plugin>
+  	</plugins>
+  </build>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.cubictest</groupId>
+      <artifactId>cubictest</artifactId>
+      <version>2.0.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.cubictest</groupId>
+      <artifactId>selenium-exporter</artifactId>
+      <version>2.0.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.cubictest</groupId>
+      <artifactId>cubictest-selenium-rc</artifactId>
+      <version>2.0.3</version>
+    </dependency>
+
+  </dependencies>  	
+    
 </project>

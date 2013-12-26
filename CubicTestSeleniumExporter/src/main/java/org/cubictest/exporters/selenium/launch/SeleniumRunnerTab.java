@@ -124,7 +124,7 @@ public class SeleniumRunnerTab extends AbstractLaunchConfigurationTab {
 			
 			ILabelProvider labelProvider= new JavaElementLabelProvider(JavaElementLabelProvider.SHOW_DEFAULT);
 			ElementListSelectionDialog dialog= new ElementListSelectionDialog(getShell(), labelProvider);
-			dialog.setTitle("CubicTest Project Selection"); 
+			dialog.setTitle("Lenny Project Selection"); 
 			dialog.setMessage("Select the CubicProject to look for test in:"); 
 			dialog.setElements(projects);
 			

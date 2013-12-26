@@ -88,7 +88,7 @@ public class WatirTestRunner implements ICubicTestRunnable {
 				process = builder.start();
 			} catch (Exception e) {
 				ErrorHandler.logAndRethrow("Could not start Ruby. Check that Ruby is installed on your system.\n\n" +
-						"Note: After Ruby installation, CubicTest must be restarted before the runner will work.\n\n", e);
+						"Note: After Ruby installation, Lenny must be restarted before the runner will work.\n\n", e);
 			}
 			processAlive = true;
 			testRunning = true;

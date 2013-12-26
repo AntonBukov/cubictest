@@ -6,7 +6,7 @@
          <meta.schema plugin="org.cubictest" id="org.cubictest.exporters" name="CubicTestExporters"/>
       </appinfo>
       <documentation>
-         Exporter extension point for converting a test written in CubicTest to another test format.
+         Exporter extension point for converting a test written in Lenny to another test format.
       </documentation>
    </annotation>
 

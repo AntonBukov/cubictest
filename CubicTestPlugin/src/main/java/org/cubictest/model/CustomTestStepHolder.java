@@ -1,4 +1,4 @@
-/*******************************************************************************
+﻿/*******************************************************************************
  * Copyright (c) 2005, 2010 Stein K. Skytteren and Christian Schwarz
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -30,6 +30,7 @@ public class CustomTestStepHolder extends ConnectionPoint {
 	private transient IProject project;
 	private HashMap<CustomTestStepParameter, CustomTestStepValue> values;
 	
+	public CustomTestStepHolder(){}
 	public CustomTestStepHolder(String file, IProject project) {
 		super();
 		this.project = project;

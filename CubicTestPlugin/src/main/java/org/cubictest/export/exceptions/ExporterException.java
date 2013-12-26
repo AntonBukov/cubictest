@@ -13,7 +13,7 @@ package org.cubictest.export.exceptions;
 import org.cubictest.common.exception.CubicException;
 
 /**
- * Base class for all CubicTest export exceptions.
+ * Base class for all Lenny export exceptions.
  * 
  * @author Christian Schwarz
  *

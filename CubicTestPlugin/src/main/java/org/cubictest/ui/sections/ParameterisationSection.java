@@ -20,6 +20,7 @@ import org.cubictest.model.Test;
 import org.cubictest.model.parameterization.ParameterList;
 import org.cubictest.persistence.ParameterPersistance;
 import org.cubictest.ui.gef.command.ChangeParameterListCommand;
+import org.cubictest.ui.gef.command.ChangeParameterListCountCommand;
 import org.cubictest.ui.gef.command.ChangeParameterListIndexCommand;
 import org.cubictest.ui.gef.controller.TestEditPart;
 import org.cubictest.ui.gef.editors.GraphicalTestEditor;
@@ -78,7 +79,9 @@ public class ParameterisationSection extends AbstractPropertySection implements 
 	private Text fileName;
 	private Button chooseFileButton;
 	private Label paramIndexLabel;
+	private Label paramCountLabel;
 	private Spinner paramIndexSpinner;
+	private Spinner paramCountSpinner;
 	private Button openParamsButton;
 	private Button refreshParamButton;
 	private Button createParamsFileButton;
@@ -168,7 +171,7 @@ public class ParameterisationSection extends AbstractPropertySection implements 
 			
 		paramIndexLabel = getWidgetFactory().createLabel(composite, "Parameter index:");
 		paramIndexSpinner = new Spinner(composite, SWT.BORDER);
-		paramIndexSpinner.setSelection(-1);
+		paramIndexSpinner.setSelection(0);
 		paramIndexSpinner.addModifyListener(new ModifyListener(){
 			
 			public void modifyText(ModifyEvent e) {
@@ -178,6 +181,25 @@ public class ParameterisationSection extends AbstractPropertySection implements 
 					command.setNewIndex(paramIndexSpinner.getSelection());
 					command.setTest(test);
 					executeCommand(command);
+					updateIndexSpinner();
+				}
+			}
+		});
+		getWidgetFactory().createLabel(composite, "");
+
+		paramCountLabel = getWidgetFactory().createLabel(composite, "Parameter count:");
+		paramCountSpinner = new Spinner(composite, SWT.BORDER);
+		paramCountSpinner.setSelection(1);
+		paramCountSpinner.addModifyListener(new ModifyListener(){
+			
+			public void modifyText(ModifyEvent e) {
+				if (paramList.getParameterCount() != paramCountSpinner.getSelection()) {
+					ChangeParameterListCountCommand command = new ChangeParameterListCountCommand();
+					command.setParameterList(paramList);
+					command.setNewCount(paramCountSpinner.getSelection());
+					command.setTest(test);
+					executeCommand(command);
+					updateIndexSpinner();
 				}
 			}
 		});
@@ -277,11 +299,19 @@ public class ParameterisationSection extends AbstractPropertySection implements 
 		if(test != null && null != paramList){
 			ParameterList list = paramList;
 			int length = list.inputParameterSize();
-			int oldValue = paramIndexSpinner.getSelection();
 			paramIndexSpinner.setValues(list.getParameterIndex(), 0, 
-					(length <= 0) ? 0 : length-1,0, 1, 5);
-			if (length > oldValue && oldValue > 0) {
-				paramIndexSpinner.setSelection(oldValue);
+					(length <= 0) ? 0 : length-list.getParameterCount(),0, 1, 5);
+			if (length == list.getParameterIndex()+1) {
+				paramCountSpinner.setEnabled(false);
+			}else{
+				paramCountSpinner.setEnabled(true);
+			}
+			paramCountSpinner.setValues(list.getParameterCount(), 1, 
+					(length <= 1) ? 1 : length-list.getParameterIndex(),0, 1, 5);
+			if (length == list.getParameterCount()) {
+				paramIndexSpinner.setEnabled(false);
+			}else{
+				paramIndexSpinner.setEnabled(true);
 			}
 		}
 	}
@@ -338,6 +368,8 @@ public class ParameterisationSection extends AbstractPropertySection implements 
 		refreshParamButton.setVisible(paramListNotNull);
 		paramIndexLabel.setVisible(paramListNotNull && paramList.hasParameters() && paramList.hasObservers());
 		paramIndexSpinner.setVisible(paramListNotNull && paramList.hasParameters() && paramList.hasObservers());
+		paramCountLabel.setVisible(paramListNotNull && paramList.hasParameters() && paramList.hasObservers());
+		paramCountSpinner.setVisible(paramListNotNull && paramList.hasParameters() && paramList.hasObservers());
 		openParamsButton.setVisible(paramListNotNull);
 		
 		if(paramList != null) {

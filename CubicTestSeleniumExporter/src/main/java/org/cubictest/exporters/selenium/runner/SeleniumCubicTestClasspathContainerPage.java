@@ -7,7 +7,6 @@
  * 
  * Contributors:
  *    Stein K. Skytteren and Christian Schwarz - initial API and implementation
- *    YE Mao - version up , feature extension
  *******************************************************************************/
 package org.cubictest.exporters.selenium.runner;
 
@@ -31,9 +30,9 @@ public class SeleniumCubicTestClasspathContainerPage extends WizardPage
 	private IClasspathEntry containerEntryResult;
 
 	public SeleniumCubicTestClasspathContainerPage() {
-		super("CubicTest Selenium Wizard Page");
-		setTitle("CubicTest Selenium");
-		setDescription("Add CubicTest Selenium Classpath");
+		super("Lenny Selenium Wizard Page");
+		setTitle("Lenny Selenium");
+		setDescription("Add Lenny Selenium Classpath");
 		setImageDescriptor(JavaPluginImages.DESC_WIZBAN_ADD_LIBRARY);
 		
 		containerEntryResult = JavaCore.newContainerEntry(new Path("CUBICTEST_SELENIUM"));
@@ -61,7 +60,7 @@ public class SeleniumCubicTestClasspathContainerPage extends WizardPage
 		
 		Label label= new Label(composite, SWT.NONE);
 		label.setFont(composite.getFont());
-		label.setText("Click \"Finish\" to add CubicTest Selenium Library");
+		label.setText("Click \"Finish\" to add Lenny Selenium Library");
 		label.setLayoutData(new GridData());
 		
 		setControl(composite);

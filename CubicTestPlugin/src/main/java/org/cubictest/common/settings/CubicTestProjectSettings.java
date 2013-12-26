@@ -7,7 +7,6 @@
  * 
  * Contributors:
  *    Stein K. Skytteren and Christian Schwarz - initial API and implementation
- *    Mao YE - version up, new feature extended
  *******************************************************************************/
 package org.cubictest.common.settings;
 
@@ -24,7 +23,7 @@ import org.cubictest.common.utils.ViewUtil;
 import org.eclipse.core.resources.IProject;
 
 /**
- * Provides access to properties for CubicTest projects.
+ * Provides access to properties for Lenny projects.
  * Not very Eclipse'ish to have settings here, but has to be this way to support Maven.
  * 
  * @author Christian Schwarz

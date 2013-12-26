@@ -88,11 +88,11 @@ public class NewPropertiesWizard extends Wizard implements INewWizard {
 	public void addPages() {
 		super.addPages();
 		namePage = new WizardNewPropertiesCreationPage("newCubicTestPropertiesNamepage");
-		namePage.setTitle("New CubicTest internationalisation file");
+		namePage.setTitle("New Lenny internationalisation file");
 		namePage.setDescription("Choose name and location of internationalisation file");
 		namePage.setContainerName(defaultDestFolder);
 		addPage(namePage);
-		setWindowTitle("CubicTest");
+		setWindowTitle("Lenny");
 
 	}
 	

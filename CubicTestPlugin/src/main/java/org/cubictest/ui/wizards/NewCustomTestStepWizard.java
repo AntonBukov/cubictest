@@ -55,7 +55,7 @@ public class NewCustomTestStepWizard extends Wizard implements INewWizard {
 		wizardNewCustomTestStepPage = new NewFileWithNameAndDescriptionPage(selection, "custom step");
 		wizardNewCustomTestStepPage.setFileExt(".custom");
 		addPage(wizardNewCustomTestStepPage);
-		setWindowTitle("New CubicTest Custom Test Step");
+		setWindowTitle("New Lenny Custom Test Step");
 
 	}
 	/**

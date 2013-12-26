@@ -79,7 +79,7 @@ public class SeleniumCustomStepSection extends CustomStepSection
 	
 	private void createNewOrOpenClassLink(Composite composite) {
 		newClassLink = new Link(composite, SWT.PUSH);
-		newClassLink.setText("<A>CubicTest Selenium extension*: </A>");
+		newClassLink.setText("<A>Lenny Selenium extension*: </A>");
 		newClassLink.setBackground(ColorConstants.white);
 		newClassLink.addSelectionListener(new SelectionListener(){
 			public void widgetDefaultSelected(SelectionEvent e) {}

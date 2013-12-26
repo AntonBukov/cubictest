@@ -1,4 +1,4 @@
-/*******************************************************************************
+﻿/*******************************************************************************
  * Copyright (c) 2005, 2010 Stein K. Skytteren and Christian Schwarz
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -143,7 +143,7 @@ public class LaunchTestRunner implements ICubicTestRunnable {
 					try {
 						while (seleniumIsRunnningOrStarting()) {
 							if (monitor.isCanceled()) {
-								stopSeleniumWithTimeoutGuard(20);
+								stopSeleniumWithTimeoutGuard(60);
 							}
 							Thread.sleep(100);
 						}
@@ -268,7 +268,7 @@ public class LaunchTestRunner implements ICubicTestRunnable {
 		}
 		
 		try {
-			stopSeleniumWithTimeoutGuard(20);
+			stopSeleniumWithTimeoutGuard(60);
 		}
 		catch (Exception e) {
 			Logger.warn("Error when stopping the Selenium Server", e);

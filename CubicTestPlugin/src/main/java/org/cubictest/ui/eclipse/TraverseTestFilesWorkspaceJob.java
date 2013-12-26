@@ -32,7 +32,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.ide.ResourceUtil;
 
 /**
- * Updates subtests / extension start points in CubicTest test files with new path after a file move.
+ * Updates subtests / extension start points in Lenny test files with new path after a file move.
  * 
  * @author SK Skytteren
  * @author Christian Schwarz

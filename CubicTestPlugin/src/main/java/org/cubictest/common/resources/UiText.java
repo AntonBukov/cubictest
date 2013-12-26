@@ -7,13 +7,12 @@
  * 
  * Contributors:
  *    Stein K. Skytteren and Christian Schwarz - initial API and implementation
- *    Mao YE - version up, new feature extended
  *******************************************************************************/
 package org.cubictest.common.resources;
 
 public class UiText {
 	
-	public static final String APP_TITLE = "CubicTest";
+	public static final String APP_TITLE = "Lenny";
 	
 	public static final String GENERAL_ERROR_MESSAGE = 
 		"An unexpected exception has occurred.";

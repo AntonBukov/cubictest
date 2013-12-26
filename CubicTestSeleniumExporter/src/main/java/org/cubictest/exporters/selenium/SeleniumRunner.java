@@ -1,4 +1,4 @@
-/*******************************************************************************
+﻿/*******************************************************************************
  * Copyright (c) 2005, 2010 Stein K. Skytteren and Christian Schwarz
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -43,7 +43,7 @@ public class SeleniumRunner
 	
     private static final String SEPERATOR = "------------------------------------------------------------------------";
 	private static final String SMALL_SEPERATOR = "-----------------------------------------------";
-	private static final String LOG_PREFIX = "[CubicTest Selenium Runner] ";
+	private static final String LOG_PREFIX = "[Lenny Selenium Runner] ";
 
 	private static final boolean REUSE_BROWSER_DEFAULT = true;
 	private static final boolean HALT_ON_TEST_FAILURE_DEFAULT = true;
@@ -74,7 +74,6 @@ public class SeleniumRunner
 	 * Run tests in specified directory and all subdirectories.
 	 * @param directoryPath Path to directory to run tests in, relative to project root.
 	 */
-    @SuppressWarnings("unchecked")
 	public void runTests(String directoryPath)
     {
     	if (StringUtils.isBlank(directoryPath)) {
@@ -245,7 +244,7 @@ public class SeleniumRunner
         	logSeperator();
         }
 	}
-    
+
 	private static void logSeperator() {
 		System.out.println(SEPERATOR);
 	}
@@ -259,7 +258,7 @@ public class SeleniumRunner
 		if (testRunner != null) {
 			try {
     			System.out.println(LOG_PREFIX + "Stopping Selenium.");
-				((JUnitTestRunner) testRunner).stopSeleniumWithTimeoutGuard(20);
+				((JUnitTestRunner) testRunner).stopSeleniumWithTimeoutGuard(60);
 			}
 			catch (Exception e) {
 				System.out.println(LOG_PREFIX + "Error stopping selenium.");
@@ -282,7 +281,7 @@ public class SeleniumRunner
 	
 	/**
 	 * Set hostname (or IP address) and port of existing Selenium Server to use.
-	 * This will prevent CubicTest from starting its own Selenium Server at localhost and random port.
+	 * This will prevent Lenny from starting its own Selenium Server at localhost and random port.
 	 */
 	public void setUseExistingSeleniumServer(String seleniumServerHostname, int seleniumServerPort) {
 		config.setUseExistingSeleniumServer(seleniumServerHostname, seleniumServerPort);

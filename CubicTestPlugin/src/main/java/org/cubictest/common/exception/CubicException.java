@@ -7,12 +7,11 @@
  * 
  * Contributors:
  *    Stein K. Skytteren and Christian Schwarz - initial API and implementation
- *    Mao YE - Version Up and New Feature Extended 
  *******************************************************************************/
 package org.cubictest.common.exception;
 
 /**
- * Base class for all CubicTest runtime exceptions.
+ * Base class for all Lenny runtime exceptions.
  * 
  * @author chr_schwarz
  */

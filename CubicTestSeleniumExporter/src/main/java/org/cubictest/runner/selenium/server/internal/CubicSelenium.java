@@ -22,15 +22,9 @@ import java.net.UnknownHostException;
 import javax.net.SocketFactory;
 
 import org.cubictest.export.exceptions.ExporterException;
-import org.openqa.selenium.server.browserlaunchers.BrowserOptions;
 
 import com.thoughtworks.selenium.Selenium;
 
-/**
- * 
- * edited by ye mao (cnkmym@gmail.com)
- * @date 2012-02-28
- */
 public class CubicSelenium implements Selenium {
 
 	private final int port;
@@ -761,13 +755,13 @@ public class CubicSelenium implements Selenium {
 	public void rollup(String arg0, String arg1) {
 		execute("rollup", arg0, arg1);
 	}
-	
-	public void start(BrowserOptions arg0) {
-		throw new RuntimeException("Not implementedin CubicTest");
+
+/*	public void start(BrowserConfigurationOptions arg0) {
+		throw new RuntimeException("Not implementedin Lenny");
 	}
 
-	public String retrieveLastRemoteControlLogs() {
-		throw new RuntimeException("Not implementedin CubicTest");
+*/	public String retrieveLastRemoteControlLogs() {
+		throw new RuntimeException("Not implementedin Lenny");
 	}
 
 	public void start(String arg0) {
@@ -775,7 +769,7 @@ public class CubicSelenium implements Selenium {
 	}
 
 	public void start(Object arg0) {
-		throw new RuntimeException("Not implemented in CubicTest");
+		throw new RuntimeException("Not implemented in Lenny");
 	}
 
 	public void addScript(String arg0, String arg1) {
@@ -822,7 +816,8 @@ public class CubicSelenium implements Selenium {
 		execute("open", arg0, arg1);
 	}
 
-	public Number getCssCount(String css) {
+	public Number getCssCount(String arg0) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 }

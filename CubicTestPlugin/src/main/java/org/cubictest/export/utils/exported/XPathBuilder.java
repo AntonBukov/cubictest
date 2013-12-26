@@ -136,7 +136,7 @@ public class XPathBuilder {
 				//get first element that has "id" attribute equal to the "for" attribute of label with the specified text:
 				String labelCondition = getPageValueCheck(id, "normalize-space(.)");
 				result += "@id" + getStringComparisonOperator(id) + 
-					"(//" + (useNamespace ? "x:" : "") + "label[" + labelCondition + "]/@for)";
+					"(//" + (useNamespace ? "x:" : "") + "label[" + labelCondition + "])";
 			}
 		}
 

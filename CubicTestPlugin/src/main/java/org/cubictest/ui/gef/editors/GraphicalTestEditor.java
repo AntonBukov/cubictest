@@ -79,9 +79,9 @@ import org.eclipse.gef.ui.actions.StackAction;
 import org.eclipse.gef.ui.actions.UndoAction;
 import org.eclipse.gef.ui.actions.UpdateAction;
 import org.eclipse.gef.ui.palette.FlyoutPaletteComposite;
+import org.eclipse.gef.ui.palette.FlyoutPaletteComposite.FlyoutPreferences;
 import org.eclipse.gef.ui.palette.PaletteViewer;
 import org.eclipse.gef.ui.palette.PaletteViewerProvider;
-import org.eclipse.gef.ui.palette.FlyoutPaletteComposite.FlyoutPreferences;
 import org.eclipse.gef.ui.parts.GraphicalViewerKeyHandler;
 import org.eclipse.gef.ui.parts.ScrollingGraphicalViewer;
 import org.eclipse.gef.ui.views.palette.PalettePage;
@@ -500,7 +500,7 @@ public class GraphicalTestEditor extends EditorPart implements IAdaptable,
 				}
 				else if(!ctPerspectiveId.equals(currentPerspective.getId())){
 					MessageDialog dialog = new MessageDialog(new Shell(), "Change Perspective", 
-							null, "Change Perspective to CubicTest? (Recomended)", 0, 
+							null, "Change Perspective to Lenny? (Recomended)", 0, 
 								new String[]{"Yes", "Allways Yes", "No", "Allways No"}, 0);
 					int dialogResult = dialog.open();
 					switch (dialogResult) {

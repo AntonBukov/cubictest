@@ -58,7 +58,7 @@ public class ResourceExtractor {
 				if (resourceFile.isDirectory()) {
 				    LauncherUtils.copyDirectory(resourceFile, dest);
 				} else {
-				    org.apache.commons.io.FileUtils.copyFile(resourceFile, dest);
+					LauncherUtils.copySingleFile(resourceFile, dest);
 				}
 			} catch (Exception e) {
                 throw new RuntimeException("Couldn't convert URL to File:" + url, e);

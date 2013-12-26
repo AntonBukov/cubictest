@@ -22,14 +22,17 @@ import org.cubictest.persistence.ParameterPersistance;
 public class ParameterList extends PropertyAwareObject {
 
 	private static final String INDEX = "index";
+	private static final String COUNT = "count";
 	private List<Parameter> parameters;
 	private int parameterIndex;
+	private int parameterCount;
 	private String fileName;
 	
 	public ParameterList getNewUpdatedVersion() {
 		ParameterList updated = ParameterPersistance.loadFromFile(this.fileName);
 		updated.copyObserversFrom(this);
 		updated.setParameterIndex(parameterIndex);
+		updated.setParameterCount(parameterCount);
 		return updated;
 	}
 	
@@ -80,7 +83,7 @@ public class ParameterList extends PropertyAwareObject {
 	}
 	
 	public void setParameterIndex(int parameterIndex){
-		if (parameterIndex >= inputParameterSize())
+		if (parameterCount+parameterIndex > inputParameterSize())
 			return;
 		int oldParameterIndex = this.parameterIndex;
 		this.parameterIndex = parameterIndex;
@@ -88,18 +91,39 @@ public class ParameterList extends PropertyAwareObject {
 		firePropertyChange(INDEX, oldParameterIndex, parameterIndex);
 	}
 	
+	public void setParameterIndexInternal(int parameterIndex){
+		if (parameterCount+parameterIndex > inputParameterSize())
+			return;
+		this.parameterIndex = parameterIndex;
+		//updateObservers();
+	}
+
+	public void setParameterCount(int parameterCount){
+		if (parameterCount+parameterIndex > inputParameterSize())
+			return;
+		int oldParameterCount = this.parameterCount;
+		this.parameterCount = parameterCount;
+		updateObservers();
+		firePropertyChange(COUNT, oldParameterCount, parameterCount);
+	}
+	
 	public int getParameterIndex(){
 		return parameterIndex;
 	}
 	
+	public int getParameterCount(){
+		return parameterCount;
+	}
+
 	public void increaseParameterIndex(){
 		parameterIndex++;
 		updateObservers();
 	}
 
 	public void updateObservers() {
-		for(Parameter param : parameters)
+		for(Parameter param : parameters){
 			param.setParameterIndex(parameterIndex);
+		}
 	}
 
 	public List<ParamMapper> getInputLines() {

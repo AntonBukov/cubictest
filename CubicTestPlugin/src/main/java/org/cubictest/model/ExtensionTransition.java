@@ -32,7 +32,7 @@ public class ExtensionTransition extends Transition {
 	public ExtensionPoint getExtensionPoint() {
 		if(extensionPoint == null) {
 			for(AbstractPage page : ((SubTest)getStart()).getTest(false).getPages()) {
-				if(page.getId().equals(id)) {
+				if(page.getId() == id) {
 					for(Transition t : page.getOutTransitions()) {
 						if(t.getEnd() instanceof ExtensionPoint) {
 							extensionPoint = (ExtensionPoint) t.getEnd();

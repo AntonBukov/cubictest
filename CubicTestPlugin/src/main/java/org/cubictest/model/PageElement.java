@@ -101,8 +101,8 @@ public abstract class PageElement extends PropertyAwareObject
 	}
 	
 	/**
-	 * Get the text that is shown in the CubicTest GUI for the page element.
-	 * @return the text that is shown in the CubicTest GUI for the page element.
+	 * Get the text that is shown in the Lenny GUI for the page element.
+	 * @return the text that is shown in the Lenny GUI for the page element.
 	 */
 	public String getDescription() {
 		if (description == null)
@@ -111,8 +111,8 @@ public abstract class PageElement extends PropertyAwareObject
 	}
 
 	/**
-	 * Set the text that is shown in the CubicTest GUI for the page element.
-	 * @param text The text that is shown in the CubicTest GUI for the page element.
+	 * Set the text that is shown in the Lenny GUI for the page element.
+	 * @param text The text that is shown in the Lenny GUI for the page element.
 	 */
 	public void setDescription(String desc) {
 		String oldDesc = this.description;

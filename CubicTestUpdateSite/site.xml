@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description name="CubicTest" url="http://www.cubictest.org/update">
-      The default update site
-   </description>
-   <feature url="features/org.cubictest_2.0.6.jar" id="org.cubictest" version="2.0.6">
-      <category name="CubicTest"/>
-   </feature>
-   <category-def name="CubicTest" label="CubicTest">
-      <description>
-         CubicTest is a web test framework that makes it easy to create and maintain tests.
-      </description>
-   </category-def>
+   <feature url="features/org.cubictest_0.1.3.jar" id="org.cubictest" version="0.1.3"/>
 </site>

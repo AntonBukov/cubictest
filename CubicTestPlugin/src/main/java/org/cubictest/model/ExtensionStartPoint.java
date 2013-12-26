@@ -24,6 +24,10 @@ public class ExtensionStartPoint extends SubTest implements IStartPoint {
 	private String sourceExtensionPointPageId;
 	private String sourceExtensionPointName;
 	
+	public ExtensionStartPoint() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public ExtensionStartPoint(String filePath, IProject project) {
 		super(filePath, project);
 	}

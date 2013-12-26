@@ -32,7 +32,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 
 /**
- * Directory walker for CubicTest export.
+ * Directory walker for Lenny export.
  * 
  * @author ovstetun
  * @author chr_schwarz
@@ -129,7 +129,7 @@ public class DirectoryWalker<T extends IResultHolder> implements IRunnableWithPr
 
 
 	/**
-	 * Exports a CubicTest file.
+	 * Exports a Lenny file.
 	 */
 	protected void convertCubicTestFile(IFile testFile, IFolder outFolder, IProgressMonitor monitor, boolean isSelected) throws Exception {
 		//load Test and start the conversion:

@@ -46,7 +46,7 @@ public class NewParamWizard extends Wizard implements INewWizard{
 	}
 	
 	public NewParamWizard(){
-		setWindowTitle("CubicTest parameterisation file");
+		setWindowTitle("Lenny parameterisation file");
 	}
 	
 	@Override
@@ -99,7 +99,7 @@ public class NewParamWizard extends Wizard implements INewWizard{
 		namePage = new WizardNewParamCreationPage("newCubicTestParamNamepage");
 		if(paramsName != null)
 			namePage.setFileName(paramsName);
-		namePage.setTitle("New CubicTest parameters");
+		namePage.setTitle("New Lenny parameters");
 		namePage.setDescription("Choose name and location of parameter file");
 		namePage.setContainerName(defaultDestFolder);
 		addPage(namePage);

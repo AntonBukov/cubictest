@@ -44,7 +44,7 @@ public class CubicTestRemoteRunnerServer implements Runnable{
 		try {
 			selenium = new CubicSelenium(seleniumClientProxyPort);
 		} catch (Exception e) {
-			System.err.println("Could not connect to Selenium through CubicTest");
+			System.err.println("Could not connect to Selenium through Lenny");
 			e.printStackTrace();
 		}
 	}
@@ -102,7 +102,7 @@ public class CubicTestRemoteRunnerServer implements Runnable{
 			}
 			socket.close();
 		} catch (IOException e) {
-			System.err.println("Error communicating with CubicTest");
+			System.err.println("Error communicating with Lenny");
 			e.printStackTrace();
 		}
 	}

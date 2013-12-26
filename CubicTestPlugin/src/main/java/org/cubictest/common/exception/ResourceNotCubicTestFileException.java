@@ -7,7 +7,6 @@
  * 
  * Contributors:
  *    Stein K. Skytteren and Christian Schwarz - initial API and implementation
- *    Mao YE - version up, new feature extended
  *******************************************************************************/
 package org.cubictest.common.exception;
 
@@ -24,6 +23,6 @@ public class ResourceNotCubicTestFileException extends CubicException {
 	
 	@Override
 	public String toString() {
-		return "Resource is not a CubicTest test file!";
+		return "Resource is not a Lenny test file!";
 	}
 }

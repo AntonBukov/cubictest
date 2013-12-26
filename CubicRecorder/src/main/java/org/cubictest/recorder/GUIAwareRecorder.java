@@ -15,6 +15,7 @@ import org.cubictest.model.AbstractPage;
 import org.cubictest.model.PageElement;
 import org.cubictest.model.Transition;
 import org.cubictest.model.UserInteraction;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.swt.widgets.Display;
 
 public class GUIAwareRecorder implements IRecorder {
@@ -75,5 +76,12 @@ public class GUIAwareRecorder implements IRecorder {
 				recorder.addToTest(transition, endPage);
 			}
 		});
+	}
+
+	/**
+	 * This method needs for interaction with project
+	 */
+	public IProject getCurrentProject() {
+		return recorder.getCurrentProject();
 	}
 }

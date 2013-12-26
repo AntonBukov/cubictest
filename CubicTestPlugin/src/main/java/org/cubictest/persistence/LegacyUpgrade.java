@@ -26,7 +26,7 @@ import org.jdom.input.SAXBuilder;
 import org.jdom.output.XMLOutputter;
 
 /**
- * Used for upgrading old CubicTest XML files to the newest standard.
+ * Used for upgrading old Lenny XML files to the newest standard.
  * See the <code>ModelInfo</code> class for info about model versions.
  * @author chr_schwarz
  */

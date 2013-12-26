@@ -11,9 +11,23 @@
 package org.cubictest.exporters.selenium.runner.holders;
 
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.cubictest.common.utils.ErrorHandler;
+import org.cubictest.common.utils.Logger;
+import org.cubictest.exporters.selenium.common.BrowserType;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverBackedSelenium;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.thoughtworks.selenium.DefaultSelenium;
 import com.thoughtworks.selenium.Selenium;
 
@@ -21,8 +35,31 @@ public class CubicTestLocalRunner {
 
 	private Selenium selenium;
 
-	public CubicTestLocalRunner(String seleniumServerHostname, int seleniumServerPort, String browser, String initialUrl) {
-		selenium = new DefaultSelenium(seleniumServerHostname, seleniumServerPort, browser, initialUrl);
+	public CubicTestLocalRunner(String seleniumServerHostname, int seleniumServerPort, BrowserType browserType, String initialUrl) {
+//		selenium = new DefaultSelenium(seleniumServerHostname, seleniumServerPort, browser, initialUrl);
+		DesiredCapabilities capability = null;
+		switch (browserType) {
+		case FIREFOX:
+			capability = DesiredCapabilities.firefox();
+			break;
+		case GOOGLE_CHROME:
+			capability = DesiredCapabilities.chrome();
+			break;
+		case INTERNET_EXPLORER:
+			capability = DesiredCapabilities.internetExplorer();
+			break;
+		case SAFARI:
+			capability = DesiredCapabilities.safari();
+			break;
+		default:
+			capability = DesiredCapabilities.htmlUnit();
+			break;
+		}
+		try {
+			selenium = new WebDriverBackedSelenium(new RemoteWebDriver(new URL("http://localhost:"+seleniumServerPort+"/wd/hub"), capability),initialUrl);
+		} catch (MalformedURLException e) {
+			Logger.error(e.getMessage(), e);
+		}
 	}
 
 	public CubicTestLocalRunner(Selenium selenium) {

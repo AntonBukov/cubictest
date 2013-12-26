@@ -19,7 +19,7 @@ import org.cubictest.exporters.selenium.common.BrowserType;
 import org.openqa.selenium.server.RemoteControlConfiguration;
 
 /**
- * Class for configuring the CubicTest Selenium Runner.
+ * Class for configuring the Lenny Selenium Runner.
  * Has two functions: Controlling the Selenium Server and controlling the Selenium Server Client Browser (Selenium interface).
  * 
  * Extends the Selenium RC RemoteControlConfiguration, and supports all settings defined there, and defines additional client settings.
@@ -38,7 +38,7 @@ public class SeleniumRunnerConfiguration  {
 	private RemoteControlConfiguration rcConfiguration;
 	
 	/**
-	 * Default is that CubicTest starts its own Selenium server at localhost and random port.
+	 * Default is that Lenny starts its own Selenium server at localhost and random port.
 	 */
 	public SeleniumRunnerConfiguration() {
 		rcConfiguration = new RemoteControlConfiguration();
@@ -77,7 +77,7 @@ public class SeleniumRunnerConfiguration  {
 	
 	/**
 	 * Set hostname (or IP address) and port of existing Selenium Server to use.
-	 * This will prevent CubicTest from starting its own Selenium Server at localhost and random port.
+	 * This will prevent Lenny from starting its own Selenium Server at localhost and random port.
 	 */
 	public void setUseExistingSeleniumServer(String seleniumServerHostname, int seleniumServerPort) {
 		this.seleniumServerHostname = seleniumServerHostname;

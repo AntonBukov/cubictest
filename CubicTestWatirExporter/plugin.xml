@@ -16,11 +16,11 @@
             id="cubictest.contribution1"
             objectClass="org.eclipse.core.resources.IResource">
          <menu
-               label="CubicTest"
+               label="Lenny"
                path="additions"
                id="cubictest.menu1">
             <separator
-                  name="CubicTest">
+                  name="Lenny">
             </separator>
          </menu>
          <action

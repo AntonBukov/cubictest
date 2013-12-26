@@ -41,7 +41,7 @@ public class ExportToWatirAction implements IActionDelegate {
 	public void run(IAction action) {
 		
 		try {
-			//callback to CubicTest with the selected files
+			//callback to Lenny with the selected files
 			CubicTestExport.exportSelection((IStructuredSelection) selection, "rb",
 					UrlStartPointConverter.class, 
 					TransitionConverter.class, 
@@ -52,7 +52,7 @@ public class ExportToWatirAction implements IActionDelegate {
 			UserInfo.showInfoDialog(OK_MESSAGE);
 		} 
 		catch (Exception e) {
-			ErrorHandler.logAndShowErrorDialogAndRethrow("Error occured in CubicTest Watir exporter.", e);
+			ErrorHandler.logAndShowErrorDialogAndRethrow("Error occured in Lenny Watir exporter.", e);
 		}
 		
 	}

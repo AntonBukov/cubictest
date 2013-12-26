@@ -48,7 +48,7 @@
    <extension
          point="org.eclipse.ui.newWizards">
       <category
-            name="CubicTest"
+            name="Lenny"
             id="cubictest">
       </category>
       <wizard
@@ -57,7 +57,7 @@
             finalPerspective="org.cubictest.CubicTestPerspective"
             icon="icons/fileicon.gif"
             id="org.cubictest.ui.wizards.NewCubicTestProjectWizard"
-            name="New CubicTest Project"
+            name="New Lenny Project"
             preferredPerspectives="org.cubictest.CubicTestPerspective"
             project="true">
       </wizard>
@@ -67,7 +67,7 @@
             finalPerspective="org.cubictest.CubicTestPerspective"
             icon="icons/fileicon.gif"
             id="org.cubictest.ui.wizards.NewTestWizard"
-            name="New CubicTest Test"
+            name="New Lenny Test"
             preferredPerspectives="org.cubictest.CubicTestPerspective">
       </wizard>
       <wizard
@@ -76,7 +76,7 @@
             finalPerspective="org.cubictest.CubicTestPerspective"
             icon="icons/fileicon.gif"
             id="org.cubictest.ui.wizards.NewTestSuiteWizard"
-            name="New CubicTest Test Suite"
+            name="New Lenny Test Suite"
             preferredPerspectives="org.cubictest.CubicTestPerspective">
       </wizard>
       <wizard
@@ -85,7 +85,7 @@
             finalPerspective="org.cubictest.CubicTestPerspective"
             icon="icons/fileicon_params.gif"
             id="org.cubictest.ui.wizards.NewParamWizard"
-            name="New CubicTest Test Parameter File"
+            name="New Lenny Test Parameter File"
             preferredPerspectives="org.cubictest.CubicTestPerspective"/>
       <wizard
             category="cubictest"
@@ -93,7 +93,7 @@
             finalPerspective="org.cubictest.CubicTestPerspective"
             icon="icons/fileicon_l18n.gif"
             id="org.cubictest.ui.wizards.NewPropertiesWizard"
-            name="New CubicTest Internationalization file"
+            name="New Lenny Internationalization file"
             preferredPerspectives="org.cubictest.CubicTestPerspective"/>
       <wizard
             category="cubictest"
@@ -101,7 +101,7 @@
             finalPerspective="org.cubictest.CubicTestPerspective"
             icon="icons/customStep.gif"
             id="org.cubictest.ui.wizards.NewCustomTestStepWizard"
-            name="New CubicTest Custom Test Step"
+            name="New Lenny Custom Test Step"
             preferredPerspectives="org.cubictest.CubicTestPerspective">
       </wizard>
    </extension>
@@ -111,11 +111,11 @@
             id="cubictest.contribution1"
             objectClass="org.eclipse.core.resources.IResource">
          <menu
-               label="CubicTest"
+               label="Lenny"
                path="additions"
                id="cubictest.menu1">
             <separator
-                  name="CubicTest">
+                  name="Lenny">
             </separator>
          </menu>    
       </objectContribution>
@@ -129,50 +129,50 @@
             class="org.cubictest.CubicTestPerspectiveFactory"
             icon="icons/fileicon.gif"
             id="org.cubictest.CubicTestPerspective"
-            name="CubicTest"/>
+            name="Lenny"/>
    </extension>
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
       <propertyContributor
             contributorId="org.cubictest.ui.gef.editors.GraphicalTestEditor"
             typeMapper="org.cubictest.ui.gef.factory.TestEditorTypeMapper">
-         <propertyCategory category="CubicTest"/>
+         <propertyCategory category="Lenny"/>
       </propertyContributor>
    </extension>
    <extension
          point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
       <propertyTabs contributorId="org.cubictest.ui.gef.editors.GraphicalTestEditor">
          <propertyTab
-               category="CubicTest"
+               category="Lenny"
                id="org.cubictest.tab.test"
                label="Test"/>
          <propertyTab
                afterTab="org.cubictest.tab.test"
-               category="CubicTest"
+               category="Lenny"
                id="org.cubictest.tab.userActions"
                label="User interaction"/>
          <propertyTab
                afterTab="org.cubictest.tab.test"
-               category="CubicTest"
+               category="Lenny"
                id="org.cubictest.tab.param"
                label="Parameterisation"/>
         <propertyTab
                afterTab="org.cubictest.tab.test"
-               category="CubicTest"
+               category="Lenny"
                id="org.cubictest.tab.i18n"
                label="Internationalisation"/>
          <propertyTab
-               category="CubicTest"
+               category="Lenny"
                id="org.cubictest.tab.customTestStepInput"
                label="Custom Test Step Input"/>
          <propertyTab
                afterTab="org.cubictest.tab.sation"
-               category="CubicTest"
+               category="Lenny"
                id="org.cubictest.tab.setUpAndTearDown"
                label="SetUp and TearDown"/>
          <propertyTab
                afterTab="org.cubictest.tab.test"
-               category="CubicTest"
+               category="Lenny"
                id="org.cubictest.tab.properties"
                label="Properties"/>
       </propertyTabs>
@@ -305,38 +305,22 @@
    </extension>
 
    
-   <extension
-         id="product"
-         point="org.eclipse.core.runtime.products">
-      <product
-            application="org.eclipse.ui.ide.workbench"
-            name="CubicTest">
-         <property
-               name="appName"
-               value="CubicTest">
-         </property>
-         <property
-               name="aboutImage"
-               value="icons/logo128x128.gif"/>
-         <property
-               name="startupMessageRect"
-               value="7,2.0.641,20"/>
-         <property
-               name="aboutText"
-               value="Thank you for using CubicTest!&#x0A;&#x0A;See www.cubictest.org for more information and support.&#x0A;&#x0A;CubicTest is created by:&#x0A;Stein Kåre Skytteren&#x0A;Christian Schwarz&#x0A;Erlend Halvorsen"/>
-         <property
-               name="startupProgressRect"
-               value="0,2.0.655,15"/>
-         <property
-               name="startupForegroundColor"
-               value="C8D5EA"/>
-         <property
-               name="windowImages"
-               value="icons/logo16x16.gif,icons/logo32x32.gif,icons/logo48x48.gif,icons/logo64x64.gif,icons/logo128x128.gif"/>
-         <property
-               name="preferenceCustomization"
-               value="plugin_customization.ini">
-         </property>
-      </product>
-   </extension>
+  <extension id="product" point="org.eclipse.core.runtime.products">
+  <product application="org.eclipse.ui.ide.workbench" name="lenny">
+  <property name="appName" value="lenny" /> 
+  <property name="aboutImage" value="icons/logo128x128.gif" /> 
+  <property name="startupMessageRect" value="7,220,441,20" /> 
+  <property
+        name="aboutText"
+        value="Thank you for using Lenny!&#x0A;See www.lenny.apelsin.by for more information and support.&#x0A;Lenny is created by:&#x0A;Stein Kåre Skytteren, Christian Schwarz, Erlend Halvorsen, Anton Bykau"/> 
+  <property name="startupProgressRect" value="0,280,455,15" /> 
+  <property name="startupForegroundColor" value="C8D5EA" /> 
+  <property name="preferenceCustomization" value="plugin_customization.ini" />
+  <property
+        name="windowImages"
+        value="icons/logo16x16.gif,icons/logo32x32.gif,icons/logo48x48.gif,icons/logo64x64.gif,icons/logo128x128.gif">
+  </property> 
+  </product>
+  </extension>
+
 </plugin>

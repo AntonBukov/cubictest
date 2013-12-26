@@ -32,8 +32,8 @@ public class SeleniumBuildPathSupporter implements IBuildPathSupporter {
 	private static final String BUILD_PATH_PAGE_ID= "org.eclipse.jdt.ui.propertyPages.BuildPathsPropertyPage"; //$NON-NLS-1$
 
 	public void addClassPathContainers(IJavaProject javaProject, Shell shell) {
-		if(MessageDialog.openQuestion(new Shell(), "Add CubicTest Selenium to classpath", 
-				"Would you like to add CubicTest and Selenium libraries to the classpath? (Recommended)")){
+		if(MessageDialog.openQuestion(new Shell(), "Add Lenny Selenium to classpath", 
+				"Would you like to add Lenny and Selenium libraries to the classpath? (Recommended)")){
 			putCubicSeleniumLibraryOnClasspath(javaProject, shell);
 		}
 	}

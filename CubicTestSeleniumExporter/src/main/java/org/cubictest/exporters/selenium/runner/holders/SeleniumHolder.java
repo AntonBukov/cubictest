@@ -20,6 +20,7 @@ import org.cubictest.common.settings.CubicTestProjectSettings;
 import org.cubictest.common.utils.Logger;
 import org.cubictest.export.exceptions.ExporterException;
 import org.cubictest.export.holders.RunnerResultHolder;
+import org.cubictest.exporters.selenium.common.BrowserType;
 import org.cubictest.exporters.selenium.runner.CubicTestRemoteRunnerClient;
 import org.cubictest.exporters.selenium.utils.SeleniumUtils;
 import org.cubictest.model.PropertyAwareObject;
@@ -58,7 +59,7 @@ public class SeleniumHolder extends RunnerResultHolder {
 		this.selenium = new CubicTestLocalRunner(selenium);
 	}
 	
-	public SeleniumHolder(String seleniumServerHostname, int seleniumServerPort, String browser, String initialUrl, Display display, CubicTestProjectSettings settings) {
+	public SeleniumHolder(String seleniumServerHostname, int seleniumServerPort, BrowserType browserType, String initialUrl, Display display, CubicTestProjectSettings settings) {
 		super(display, settings, SeleniumUtils.getTimeout(settings));
 		if (seleniumServerPort < 80) {
 			throw new ExporterException("Invalid port");
@@ -66,7 +67,7 @@ public class SeleniumHolder extends RunnerResultHolder {
 		if(isBlank(seleniumServerHostname)) {
 			seleniumServerHostname = "localhost";
 		}
-		this.selenium = new CubicTestLocalRunner(seleniumServerHostname, seleniumServerPort, browser, initialUrl);
+		this.selenium = new CubicTestLocalRunner(seleniumServerHostname, seleniumServerPort, browserType, initialUrl);
 	}
 	
 	@Override

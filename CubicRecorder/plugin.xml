@@ -61,12 +61,12 @@
          point="org.eclipse.debug.core.launchConfigurationTypes">
       <launchConfigurationType
             delegate="org.cubictest.recorder.launch.RecorderLaunchConfigurationDelegate"
-            delegateDescription="Recorder - Records CubicTest tests with Selenium"
+            delegateDescription="Recorder - Records Lenny tests with Selenium"
             delegateName="SeleniumRecorder"
             id="org.cubictest.recorder.ui.launchConfigurationType"
             migrationDelegate="org.cubictest.exporters.selenium.launch.LaunchConfigurationMigrationDelegate"
             modes="run, debug"
-            name="CubicTest Selenium Recorder"
+            name="Lenny Selenium Recorder"
             public="true">
          <fileExtension
                default="true"

@@ -73,11 +73,11 @@ public class NewCubicTestProjectWizard extends Wizard implements INewWizard {
 	public void addPages() {
 		super.addPages();
 		namePage = new WizardNewProjectCreationPage("newCubicTestProjectNamepage");
-		namePage.setTitle("New CubicTest project");
+		namePage.setTitle("New Lenny project");
 		namePage.setDescription("Choose name of project");
 		
 		summaryPage = new NewProjectSummaryPage();
-		summaryPage.setTitle("New CubicTest project");
+		summaryPage.setTitle("New Lenny project");
 		summaryPage.setDescription("Ready to create project");
 		
 		addPage(namePage);

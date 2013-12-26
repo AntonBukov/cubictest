@@ -102,8 +102,8 @@ public class SeleniumController implements Callable<SeleniumHolder> {
 			if (baseUrl.endsWith("://")) {
 				baseUrl = initUrl;
 			}
-			seleniumHolder = new SeleniumHolder(config.getSeleniumServerHostname(), config.getSeleniumServerPort(), config.getBrowser().getId(), baseUrl, display, settings);
-			seleniumHolder.getSelenium().start();
+			seleniumHolder = new SeleniumHolder(config.getSeleniumServerHostname(), config.getSeleniumServerPort(), config.getBrowser(), baseUrl, display, settings);
+			//seleniumHolder.getSelenium().start();
 			//using selenium default timeout, open start URL and check connection (that browser profiles has been set correctly):
 			seleniumHolder.getSelenium().open(initUrl, "true");
 

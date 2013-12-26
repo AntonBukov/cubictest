@@ -59,7 +59,7 @@ public abstract class LaunchConfigurationDelegate extends AbstractJavaLaunchConf
 	private static final String CUBICTEST_SELENIUM_RUNNER_CLASS = "org.cubictest.runner.selenium.server.internal.CubicTestRemoteRunnerServer";
 	private static final String ERROR_INVALID_PROJECT_GOT_TO_BE_A_JAVA_PROJEDT = "Error invalid project, got to be a java project";
 	private static final String REMOTE_CUBIC_RUNNER_IS_NOT_ON_THE_CLASSPATH = "RemoteCubicRunner is not on the classpath, "
-			+ "please add the CubicTest Selenium Library to the path";
+			+ "please add the Lenny Selenium Library to the path";
 	private static final String CUBIC_RUNNER_COULD_NOT_FIND_FREE_PORT = "CubicRunner could not find free port";
 	private static final String CUBIC_UNIT_PORT = "CUBIC_UNIT_PORT";
 	private static final String SELENIUM_CLIENT_PROXY = "SELENIUM_CLIENT_PROXY";
@@ -133,7 +133,7 @@ public abstract class LaunchConfigurationDelegate extends AbstractJavaLaunchConf
 			collectExecutionArguments(configuration, vmArguments, programArguments);
 			
 			// VM-specific attributes
-			Map<?, ?> vmAttributesMap= getVMSpecificAttributesMap(configuration);
+			Map<String, Object> vmAttributesMap= getVMSpecificAttributesMap(configuration);
 			
 			// Classpath
 			String[] classpath = getClasspath(configuration);

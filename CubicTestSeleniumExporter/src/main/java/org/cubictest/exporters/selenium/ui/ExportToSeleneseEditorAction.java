@@ -51,7 +51,7 @@ public class ExportToSeleneseEditorAction implements IEditorActionDelegate {
 		}
 		
 		try {
-			//callback to CubicTest with the selected files
+			//callback to Lenny with the selected files
 			CubicTestExport.exportSelection((IStructuredSelection) selection, "html",
 					UrlStartPointConverter.class, 
 					TransitionConverter.class, 

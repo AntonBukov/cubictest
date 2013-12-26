@@ -19,6 +19,7 @@ import org.cubictest.model.Test;
 import org.cubictest.model.parameterization.ParameterList;
 import org.cubictest.persistence.ParameterPersistance;
 import org.cubictest.ui.gef.command.ChangeParameterListCommand;
+import org.cubictest.ui.gef.command.ChangeSubTestParamCountCommand;
 import org.cubictest.ui.gef.command.ChangeSubTestParamIndexCommand;
 import org.cubictest.ui.gef.controller.SubTestEditPart;
 import org.cubictest.ui.gef.editors.GraphicalTestEditor;
@@ -59,6 +60,8 @@ public class SubTestParamsSection extends AbstractPropertySection implements Pro
 	private Label noParamsLabel;
 	private Spinner paramIndexSpinner;
 	private Label useParamIndexFromTestLabel;
+	private Spinner paramCountSpinner;
+	private Label paramCountLabel;
 	private SubTest subtest;
 	private Button openParamsButton;
 	private Button refreshButton;
@@ -154,6 +157,7 @@ public class SubTestParamsSection extends AbstractPropertySection implements Pro
 		paramIndexLabel = getWidgetFactory().createLabel(composite, "Parameter index:");
 
 		paramIndexSpinner = new Spinner(composite, SWT.BORDER);
+		paramIndexSpinner.setSelection(0);
 		paramIndexSpinner.addModifyListener(new ModifyListener() {
 			public void modifyText(ModifyEvent e) {
 				if (subtest.getParameterIndex() != paramIndexSpinner.getSelection()) {
@@ -161,10 +165,27 @@ public class SubTestParamsSection extends AbstractPropertySection implements Pro
 					command.setNewIndex(paramIndexSpinner.getSelection());
 					command.setTest(subtest);
 					executeCommand(command);
+					updateIndexSpinner();
 				}
 			}
 		});
 		paramIndexSpinner.setLayoutData(data);
+		paramCountLabel = getWidgetFactory().createLabel(composite, "Parameter count:");
+
+		paramCountSpinner = new Spinner(composite, SWT.BORDER);
+		paramCountSpinner.setSelection(1);
+		paramCountSpinner.addModifyListener(new ModifyListener() {
+			public void modifyText(ModifyEvent e) {
+				if (subtest.getParameterIndex() != paramCountSpinner.getSelection()) {
+					ChangeSubTestParamCountCommand command = new ChangeSubTestParamCountCommand();
+					command.setNewCount(paramCountSpinner.getSelection());
+					command.setTest(subtest);
+					executeCommand(command);
+					updateIndexSpinner();
+				}
+			}
+		});
+		paramCountSpinner.setLayoutData(data);
 	}
 
 	private void createOpenParamsButton(Composite composite) {
@@ -185,7 +206,20 @@ public class SubTestParamsSection extends AbstractPropertySection implements Pro
 		if(test != null && test.getParamList() != null){
 			ParameterList list = test.getParamList();
 			int length = list.inputParameterSize();
-			paramIndexSpinner.setValues(subtest.getParameterIndex(), 0, (length <= 0) ? 0 : length - 1, 0, 1, 5);
+			paramIndexSpinner.setValues(subtest.getParameterIndex(), 0, 
+					(length <= 0) ? 0 : length-subtest.getParameterCount(),0, 1, 5);
+			if (length == list.getParameterIndex()+1) {
+				paramCountSpinner.setEnabled(false);
+			}else{
+				paramCountSpinner.setEnabled(true);
+			}
+			paramCountSpinner.setValues(subtest.getParameterCount(), 1, 
+					(length <= 1) ? 1 : length-subtest.getParameterIndex(),0, 1, 5);
+			if (length == subtest.getParameterCount()) {
+				paramIndexSpinner.setEnabled(false);
+			}else{
+				paramIndexSpinner.setEnabled(true);
+			}
 		}
 	}
 
@@ -221,6 +255,8 @@ public class SubTestParamsSection extends AbstractPropertySection implements Pro
 		if (test.hasParamsConfigured()) {
 			paramIndexSpinner.setVisible(true);
 			paramIndexLabel.setVisible(true);
+			paramCountSpinner.setVisible(true);
+			paramCountLabel.setVisible(true);
 			openParamsButton.setVisible(true);
 			noParamsLabel.setVisible(false);
 			useParamIndexFromTestCheckbox.setVisible(true);
@@ -229,6 +265,8 @@ public class SubTestParamsSection extends AbstractPropertySection implements Pro
 		else {
 			paramIndexSpinner.setVisible(false);
 			paramIndexLabel.setVisible(false);
+			paramCountSpinner.setVisible(false);
+			paramCountLabel.setVisible(false);
 			openParamsButton.setVisible(false);
 			noParamsLabel.setVisible(true);
 			useParamIndexFromTestCheckbox.setVisible(false);

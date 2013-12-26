@@ -37,6 +37,7 @@ import org.cubictest.ui.gef.command.CreatePageElementCommand;
 import org.cubictest.ui.gef.command.CreateTransitionCommand;
 import org.cubictest.ui.gef.interfaces.exported.ITestEditor;
 import org.cubictest.ui.gef.layout.AutoLayout;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.swt.widgets.Display;
 
@@ -245,5 +246,12 @@ public class CubicRecorder implements IRecorder {
 		this.syncCommandStack.execute(addAbstractPageCommand);
 
 		this.autoLayout.layout(transition.getStart());
+	}
+
+	/**
+	 * This method needs for interaction with project
+	 */
+	public IProject getCurrentProject() {
+		return test.getProject();
 	}
 }

@@ -12,6 +12,7 @@ package org.cubictest.exporters.selenium.runner.util;
 
 import static org.junit.Assert.assertEquals;
 
+import org.cubictest.exporters.selenium.SeleniumRunner;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,6 +48,12 @@ public class SeleniumTest {
         browser.click("btnG");
         browser.waitForPageToLoad("5000");
         assertEquals("hello world - Google Search", browser.getTitle());
+    }
+    
+    @Test
+    public void testExport(){
+    	SeleniumRunner runner = new SeleniumRunner();
+    	runner.runTest("test2_2.aat");
     }
     
     @After

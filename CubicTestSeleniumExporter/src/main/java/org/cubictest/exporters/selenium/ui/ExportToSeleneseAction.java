@@ -43,7 +43,7 @@ public class ExportToSeleneseAction implements IActionDelegate {
 	public void run(IAction action) {
 		
 		try {
-			//callback to CubicTest with the selected files
+			//callback to Lenny with the selected files
 			CubicTestExport.exportSelection((IStructuredSelection) selection, "html",
 					UrlStartPointConverter.class, 
 					TransitionConverter.class, 
@@ -54,7 +54,7 @@ public class ExportToSeleneseAction implements IActionDelegate {
 			UserInfo.showInfoDialog(OK_MESSAGE);
 		} 
 		catch (Exception e) {
-			ErrorHandler.logAndShowErrorDialogAndRethrow("Error occured in CubicTest Selenium exporter.", e);
+			ErrorHandler.logAndShowErrorDialogAndRethrow("Error occured in Lenny Selenium exporter.", e);
 		}
 		
 	}

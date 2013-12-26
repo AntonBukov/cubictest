@@ -32,6 +32,7 @@ import org.cubictest.model.Transition;
 import org.cubictest.model.TransitionNode;
 import org.cubictest.model.UrlStartPoint;
 import org.cubictest.model.UserInteractionsTransition;
+import org.cubictest.ui.gef.controller.UserInteractionsTransitionEditPart;
 
 /**
  * Converts a Test using generic handlers and a generic result holder.
@@ -100,7 +101,19 @@ public class TreeTestWalker<T extends IResultHolder> {
 	 * Stops at target page. Does not convert all paths in tree if target page non-null. 
 	 */
 	public void convertTest(Test test, T resultHolder, TransitionNode targetPage) {
-		convertTest(test, null, resultHolder, targetPage);
+		if(test.getParamList()!=null){
+			int firstInd = test.getParamList().getParameterIndex();
+			List<TransitionNode> savedCn = convertedNodes;
+			UserInteractionsTransitionEditPart.setUpdatePart(false);
+			for(int i = 0; i<test.getParamList().getParameterCount();i++, test.getParamList().increaseParameterIndex()){
+				convertedNodes = new ArrayList<TransitionNode>(savedCn);
+				convertTest(test, null, resultHolder, targetPage);
+			}
+			UserInteractionsTransitionEditPart.setUpdatePart(true);
+			test.getParamList().setParameterIndexInternal(firstInd);
+		}else{
+			convertTest(test, null, resultHolder, targetPage);
+		}
 	}
 	
 	
@@ -287,6 +300,7 @@ public class TreeTestWalker<T extends IResultHolder> {
 		// Parameterization: Set correct parameter in sub test:
 		if (subtest.hasOwnParams()) {
 			subtestTest.getParamList().setParameterIndex(subtest.getParameterIndex());
+			subtestTest.getParamList().setParameterCount(subtest.getParameterCount());
 			subtestTest.updateObservers();
 		}
 		// i18n: Set correct language in sub test:
@@ -297,8 +311,24 @@ public class TreeTestWalker<T extends IResultHolder> {
 		
 		// Convert sub test:
 		try {
-			convertTransitionNode(resultHolder, subtestTest.getStartPoint(), subTestTargetExPoint, null);
-			resultHolder.updateStatus(subtest, false, subTestTargetExPoint);
+			if(subtestTest.getParamList()!=null){
+				Integer firstInd = null;
+				firstInd = subtestTest.getParamList().getParameterIndex();
+				List<TransitionNode> savedCn = convertedNodes;
+				UserInteractionsTransitionEditPart.setUpdatePart(false);
+				for(int i = 0; i<subtestTest.getParamList().getParameterCount();i++, subtestTest.getParamList().increaseParameterIndex()){
+					convertedNodes = new ArrayList<TransitionNode>(savedCn);
+					convertTransitionNode(resultHolder, subtestTest.getStartPoint(), subTestTargetExPoint, null);
+					resultHolder.updateStatus(subtest, false, subTestTargetExPoint);
+				}
+				UserInteractionsTransitionEditPart.setUpdatePart(true);
+				if(firstInd!=null){
+					subtestTest.getParamList().setParameterIndex(firstInd);
+				}
+			}else{
+				convertTransitionNode(resultHolder, subtestTest.getStartPoint(), subTestTargetExPoint, null);
+				resultHolder.updateStatus(subtest, false, subTestTargetExPoint);
+			}
 		}
 		catch (Exception e) {
 			handleSubTestException(resultHolder, subtest, subTestTargetExPoint, e);

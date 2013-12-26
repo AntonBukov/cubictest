@@ -17,11 +17,11 @@
             id="cubictest.contribution1"
             objectClass="org.eclipse.core.resources.IResource">
          <menu
-               label="CubicTest"
+               label="Lenny"
                path="additions"
                id="cubictest.menu1">
             <separator
-                  name="CubicTest">
+                  name="Lenny">
             </separator>
          </menu>
          <action
@@ -51,12 +51,12 @@
          point="org.eclipse.debug.core.launchConfigurationTypes">
       <launchConfigurationType
             delegate="org.cubictest.exporters.selenium.launch.RunnerLaunchConfigurationDelegate"
-            delegateDescription="SeleniumRunner - Runs the CubicTest tests with Selenium"
+            delegateDescription="SeleniumRunner - Runs the Lenny tests with Selenium"
             delegateName="SeleniumRunner"
             id="org.cubictest.exporters.selenium.ui.launchConfigurationType"
             migrationDelegate="org.cubictest.exporters.selenium.launch.LaunchConfigurationMigrationDelegate"
             modes="run, debug"
-            name="CubicTest Selenium Runner"
+            name="Lenny Selenium Runner"
             public="true">
          <fileExtension
                default="true"
@@ -101,7 +101,7 @@
       <classpathContainerPage
             class="org.cubictest.exporters.selenium.runner.SeleniumCubicTestClasspathContainerPage"
             id="org.cubictest.exporters.selenium.runner.classpathContainerPage"
-            name="CubicTest Selenium">
+            name="Lenny Selenium">
       </classpathContainerPage>
    </extension>
    <extension

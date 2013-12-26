@@ -36,7 +36,7 @@ public class ExposeExtensionPointWizard extends Wizard {
 	public ExposeExtensionPointWizard(SubTest subTest, Test test) {
 		this.subTest = subTest;
 		this.test = test;
-		setWindowTitle("CubicTest");
+		setWindowTitle("Lenny");
 		setNeedsProgressMonitor(true);
 	}
 

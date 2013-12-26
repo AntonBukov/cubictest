@@ -11,7 +11,6 @@
 package org.cubictest.exporters.selenium.launch;
 
 import org.cubictest.export.utils.exported.ExportUtils;
-import org.cubictest.exporters.selenium.launch.RunnerParameters;
 import org.cubictest.exporters.selenium.runner.SeleniumRunnerConfiguration;
 import org.cubictest.model.Test;
 

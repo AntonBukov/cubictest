@@ -468,7 +468,7 @@ public class IdentifierComposite extends Composite implements PropertyChangeList
 			if(Identifier.VALUE.equals(eventName)){
 				value.setText((String) event.getNewValue());
 			}else if(Identifier.ACTUAL.equals(eventName)){
-				//TODO
+				//TODO Add Identifier change
 			}else if(Identifier.TYPE.equals(eventName)){
 			
 			}else if(Identifier.MODERATOR.equals(eventName)){

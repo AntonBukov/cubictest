@@ -40,7 +40,7 @@ public class NewTestSuiteWizard extends AbstractNewSimpleStartPointTestWizard im
 	}
 	@Override
 	protected void getWizardTitle() {
-		setWindowTitle("New CubicTest test suite");
+		setWindowTitle("New Lenny test suite");
 	}
 	
 	@Override

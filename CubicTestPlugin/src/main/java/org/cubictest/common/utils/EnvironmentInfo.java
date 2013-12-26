@@ -7,7 +7,6 @@
  * 
  * Contributors:
  *    Stein K. Skytteren and Christian Schwarz - initial API and implementation
- *    Mao YE - version up, new feature extended
  *******************************************************************************/
 package org.cubictest.common.utils;
 
@@ -22,7 +21,7 @@ public class EnvironmentInfo {
 	private static Boolean runningInEclipse;
 
 	/**
-	 * Get whether CubicTest is running in Eclipse or not.
+	 * Get whether Lenny is running in Eclipse or not.
 	 * @return
 	 */
 	public static boolean isRunningInEclipse() {

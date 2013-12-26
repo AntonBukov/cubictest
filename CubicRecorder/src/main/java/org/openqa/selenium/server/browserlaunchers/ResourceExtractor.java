@@ -28,10 +28,10 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.eclipse.core.runtime.FileLocator;
 import org.mortbay.log.LogFactory;
-import org.openqa.selenium.browserlaunchers.LauncherUtils;
 
 public class ResourceExtractor {
 
@@ -56,9 +56,9 @@ public class ResourceExtractor {
 	            File resourceFile = org.apache.commons.io.FileUtils.toFile(FileLocator.toFileURL(url)); //new File(new URI(url.toExternalForm()));
 				if (!alwaysExtract) return resourceFile;
 				if (resourceFile.isDirectory()) {
-				    LauncherUtils.copyDirectory(resourceFile, dest);
+					FileUtils.copyDirectory(resourceFile, dest);
 				} else {
-				    org.apache.commons.io.FileUtils.copyFile(resourceFile, dest);
+				    FileUtils.copyFile(resourceFile, dest);
 				}
 			} catch (Exception e) {
                 throw new RuntimeException("Couldn't convert URL to File:" + url, e);

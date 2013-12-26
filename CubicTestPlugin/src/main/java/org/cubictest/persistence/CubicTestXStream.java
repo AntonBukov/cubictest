@@ -69,7 +69,7 @@ import com.thoughtworks.xstream.XStream;
 
 
 /**
- * CubicTest specific XStream mapping.
+ * Lenny specific XStream mapping.
  * 
  * @author chr_schwarz
  */

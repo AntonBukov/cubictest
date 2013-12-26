@@ -47,7 +47,7 @@ public class ExportToWatirEditorAction implements IEditorActionDelegate {
 	public void run(IAction action) {
 		
 		try {
-			//callback to CubicTest with the selected files
+			//callback to Lenny with the selected files
 			CubicTestExport.exportSelection((IStructuredSelection) selection, "rb",
 					UrlStartPointConverter.class, 
 					TransitionConverter.class, 

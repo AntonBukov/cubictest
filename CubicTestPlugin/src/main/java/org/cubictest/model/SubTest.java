@@ -32,8 +32,13 @@ public class SubTest extends ConnectionPoint {
 	private transient IResourceMonitor resourceMonitor;
 	private transient boolean dangling;
 	private int parameterIndex = -1;
+	private int parameterCount = -1;
 	private Language language;
 
+	public SubTest(){
+		super();
+	}
+	
 	public SubTest(String filePath, IProject project) {
 		super();
 		this.filePath = filePath;
@@ -197,4 +202,11 @@ public class SubTest extends ConnectionPoint {
 		this.language = language;
 	}
 
+	public int getParameterCount() {
+		return parameterCount;
+	}
+
+	public void setParameterCount(int parameterCount) {
+		this.parameterCount = parameterCount;
+	}
 }

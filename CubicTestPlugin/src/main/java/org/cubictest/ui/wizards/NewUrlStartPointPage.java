@@ -80,7 +80,7 @@ public class NewUrlStartPointPage extends WizardPage implements ModifyListener, 
 			startPointTypeSelectionPage.setUrlStartPointSelected(true);
 		}
 		else {
-			updateStatus("URL must start with \"http://\" or \"https://\"", STATUS_ERROR);
+			updateStatus("URL must start with \"http://\" or \"https://\" or \"file:///\"", STATUS_ERROR);
 		}
 	}
 	
@@ -89,7 +89,7 @@ public class NewUrlStartPointPage extends WizardPage implements ModifyListener, 
 	}
 
 	public boolean hasValidUrl(){
-		if (!(urlText.getText().startsWith("http://") || urlText.getText().startsWith("https://"))) {
+		if (!(urlText.getText().startsWith("http://") || urlText.getText().startsWith("https://") || urlText.getText().startsWith("file:///"))) {
 			return false;
 		}
 		if (urlText.getText().substring(urlText.getText().indexOf("://") + 3).length() < 1) {

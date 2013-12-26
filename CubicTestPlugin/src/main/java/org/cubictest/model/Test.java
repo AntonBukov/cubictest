@@ -31,7 +31,7 @@ import org.eclipse.draw2d.geometry.Point;
  * @author Christian Schwarz
  */
 public class Test extends PropertyAwareObject implements NamePropertyObject {
-	
+	//main object
 	private ConnectionPoint startPoint;
 	private List<ExtensionPoint> extensionPoints = new ArrayList<ExtensionPoint>();
 	private List<AbstractPage> pages = new ArrayList<AbstractPage>();
@@ -66,8 +66,13 @@ public class Test extends PropertyAwareObject implements NamePropertyObject {
 		this.startPoint = startPoint;
 		firePropertyChange(CHILD,oldStartPoint,startPoint);
 	}
+	
+	/**
+	 * Add any abstract page to test
+	 * @param p
+	 */
 	public void addPage(AbstractPage p) {
-		//idempotent:
+		//id impotent:
 		if (!getPages().contains(p)) {
 			getPages().add(p);
 			firePropertyChange(CHILD,null,p);
@@ -79,13 +84,16 @@ public class Test extends PropertyAwareObject implements NamePropertyObject {
 		if(pages == null) {
 			pages = new ArrayList<AbstractPage>();
 		}
-		updateDummyPageForScrolling();
+//		updateDummyPageForScrolling();
 		return pages;
 	}
 	
-	/** Adds an invisible page to force a scrollbar and a larger canvas */ 
+	/** 
+	 * Adds an invisible page to force a scrollbar 
+	 * and a larger canvas 
+	 */ 
 	private void updateDummyPageForScrolling() {
-		pages.remove(dummyPageForScrolling);
+		//pages.remove(dummyPageForScrolling);
 		int maxY = 0;
 		List<TransitionNode> nodes = new ArrayList<TransitionNode>(pages);
 		nodes.addAll(subTests);
@@ -96,10 +104,13 @@ public class Test extends PropertyAwareObject implements NamePropertyObject {
 				maxY = node.getPosition().y;
 			}
 		}
+		if(dummyPageForScrolling==null){
 		dummyPageForScrolling = new Page();
+			dummyPageForScrolling.setName("dummyPageForScrolling");
 		dummyPageForScrolling.setDimension(new Dimension(0, 0));
-		dummyPageForScrolling.setPosition(new Point(0, maxY + 300));
 		pages.add(dummyPageForScrolling);
+	}
+		dummyPageForScrolling.setPosition(new Point(0, maxY + 300));
 	}
 	
 	public void setPages(List<AbstractPage> pages) {

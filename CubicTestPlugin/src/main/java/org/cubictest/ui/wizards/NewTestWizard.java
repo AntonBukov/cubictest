@@ -227,7 +227,7 @@ public class NewTestWizard extends Wizard implements INewWizard {
 
 		project = WizardUtils.getProjectFromSelectedResource(selection);
 		if (project == null) {
-			ErrorHandler.logAndShowErrorDialogAndThrow("New CubicTest tests must be put inside a CubicTest Project.");
+			ErrorHandler.logAndShowErrorDialogAndThrow("New Lenny tests must be put inside a Lenny Project.");
 		}
 		if (shouldPromptToSaveAllEditors()) {
 			IDE.saveAllEditors(new IResource[] {project}, true);
@@ -243,7 +243,7 @@ public class NewTestWizard extends Wizard implements INewWizard {
 	}
 
 	protected void getWizardTitle() {
-		setWindowTitle("New CubicTest test");
+		setWindowTitle("New Lenny test");
 	}
 
 	

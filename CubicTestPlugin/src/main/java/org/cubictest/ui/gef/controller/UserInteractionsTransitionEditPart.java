@@ -88,13 +88,6 @@ public class UserInteractionsTransitionEditPart extends TransitionEditPart{
 	
 	
 	/* (non-Javadoc)
-	 * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
-	 */
-	public void propertyChange(PropertyChangeEvent event) {
-		refreshVisuals();
-	}
-
-	/* (non-Javadoc)
 	 * @see org.eclipse.gef.editparts.AbstractEditPart#refreshVisuals()
 	 */
 	@Override
@@ -254,5 +247,14 @@ public class UserInteractionsTransitionEditPart extends TransitionEditPart{
 			}
 		}
 	}
-	
+
+	private static boolean isUpdatePart = true;
+	public void propertyChange(PropertyChangeEvent evt) {
+		if(UserInteractionsTransitionEditPart.isUpdatePart){
+			refreshVisuals();
+		}
+	}
+	public static void setUpdatePart(boolean isUpdatePart) {
+		UserInteractionsTransitionEditPart.isUpdatePart = isUpdatePart;
+	}
 }
